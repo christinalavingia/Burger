@@ -1,29 +1,31 @@
 <h1>Eat-Da-Burger!</h1>
 
+<p>Choose a burger from the list and devour it. Don't see a burger you like? Add one to the list using the form below.</p>
+
 <main>
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         {{#each burgers}}
-          {{#unless this.devoured}}
-            <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-              </form>
-            </div>
-          {{/unless}}
+        {{#unless this.devoured}}
+        <div>
+          <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+            <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+          </form>
+        </div>
+        {{/unless}}
         {{/each}}
       </div>
 
       <div class="col-md-6">
         {{#each burgers}}
-          {{#if this.devoured}}
-            <div class='burgerEaten'>
-              <div>
-                {{this.burger_name}}
-              </div>
-            </div>
-          {{/if}}
+        {{#if this.devoured}}
+        <div class='burgerEaten'>
+          <div>
+            {{this.burger_name}}
+          </div>
+        </div>
+        {{/if}}
         {{/each}}
       </div>
     </div>
