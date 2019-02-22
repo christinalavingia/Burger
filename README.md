@@ -43,4 +43,6 @@ To achieve the MVC Framework, the files are nested in the following structure:
 └── views
     ├── index.handlebars
     └── layouts
-        └── main.handlebars ```
+        └── main.handlebars 
+         
+```
